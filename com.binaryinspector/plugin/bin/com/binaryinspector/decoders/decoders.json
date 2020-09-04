@@ -1,0 +1,140 @@
+{
+	"decoders": [
+		{
+			"class": "com.binaryinspector.decoders.numeric.Binary",
+			"parameters": [
+				{	
+					"name": "Endian",
+					"type": "Enum",
+					"values": ["Big", "Little"],
+					"dump": "%s endian",
+					"default": "Big",
+				},
+				{
+					"name": "Unsigned",
+					"type": "Boolean",
+					"default": "false"
+				},				
+				{	
+					"name": "Fraction digits",
+					"label": "Implied fraction digits (decimal)",
+					"type": "Integer",
+					"dump": "%s fr. digits"
+				},	
+				{	
+					"name": "Byte length",
+					"type": "Integer",
+					"dump": "%s bytes" 
+				}				
+			]		
+		},	
+		{
+			"class": "com.binaryinspector.decoders.numeric.PackedDecoder",
+			"parameters": [
+				{	
+					"name": "Total digits",
+					"type": "Integer",
+					"dump": "%s digits"
+				},			
+				{	
+					"name": "Fraction digits",
+					"type": "Integer",
+					"dump": "%s fr. digits"
+				},
+				{
+					"name": "Unsigned",
+					"type": "Boolean",
+					"default": "false"
+				},
+				{
+					"name": "Even digits",
+					"type": "Boolean",
+					"default": "false"
+				}
+			]
+		},
+		
+		{
+			"class": "com.binaryinspector.decoders.numeric.ZonedDecoder",
+			"parameters": [
+				{	
+					"name": "Total digits",
+					"type": "Integer",
+					"dump": "%s digits"
+				},			
+				{	
+					"name": "Fraction digits",
+					"type": "Integer",
+					"dump": "%s fr. digits"					
+				},
+				{
+					"name": "Unsigned",
+					"type": "Boolean",
+					"default": "false"
+				},
+				{
+					"name": "National",
+					"type": "Boolean",
+					"default": "false"
+				},
+				{
+					"name": "Sign position",
+					"type": "Enum",
+					"default": "Trailing",
+					"values": ["Leading", "Trailing"],
+					"enumDump": ["Sign Leading", ""],
+					"namePostfix": "bytes" 
+				},
+				{
+					"name": "Sign separate",
+					"type": "Boolean",
+					"default": "false"
+				},				
+				{
+					"name": "Type",
+					"type": "Enum",
+					"default": "Ebcdic",
+					"values": ["Ebcdic", "Ascii"],
+					"dump": "%s"
+				}	
+			]
+		},
+		
+		{
+			"class": "com.binaryinspector.decoders.text.TextDecoder",
+			"parameters": [
+				{	
+					"name": "Character set",
+					"type": "Enum",
+					"default": "Cp037",
+					"dump": "%s",
+					"valuesAskClass": "true"			
+				},
+				{	
+					"name": "Byte length",
+					"type": "Integer",
+					"dump": "%s bytes"
+				}
+			]		
+		},
+		
+		{
+			"class": "com.binaryinspector.decoders.numeric.FloatDecoder",
+			"parameters": [
+				{	
+					"name": "Format",
+					"type": "Enum",
+					"values": ["Ieee Big Endian", "Ieee Little Endian", "IBM Hex"],
+					"default": "IBM Hex"
+				},
+				{	
+					"name": "Size",
+					"type": "Enum",
+					"values": ["Float", "Double"],
+					"default": "Float",
+					"dump": "%s"
+				}
+			]		
+		}
+	]
+}

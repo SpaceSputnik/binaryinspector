@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Binary Data Inspector
+Bundle-SymbolicName: com.binaryinspector;singleton:=true
+Bundle-Version: 2.0.0.0
+Bundle-Activator: com.binaryinspector.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.compare,
+ org.eclipse.ui.editors,
+ org.eclipse.jface.text
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: ., lib/jt400.jar
